@@ -1,216 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Rinaldi Agusta | Data Analyst Portfolio</title>
-<style>
-  :root {
-    --primary: #2c3e50;
-    --secondary: #2980b9;
-    --bg: #f5f7fa;
-    --white: #fff;
-    --text: #333;
-    --accent: #1abc9c;
-  }
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-  }
-  header {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: var(--white);
-    padding: 40px 20px;
-    text-align: center;
-  }
-  header h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-
-  /* Menu */
-  nav {
-    background: var(--primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  nav a {
-    color: var(--white);
-    text-decoration: none;
-    padding: 15px 20px;
-    transition: background 0.3s;
-  }
-  nav a:hover {
-    background: var(--secondary);
-  }
-
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-  }
-  .menu-toggle div {
-    width: 25px;
-    height: 3px;
-    background: var(--white);
-    margin: 4px 0;
-  }
-  .nav-links {
-    display: flex;
-  }
-
-  .container {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 20px;
-    background: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-  section {
-    margin-bottom: 50px;
-  }
-  h2 {
-    margin-bottom: 15px;
-    color: var(--secondary);
-    border-bottom: 2px solid var(--secondary);
-    display: inline-block;
-    padding-bottom: 4px;
-  }
-  .about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .about img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--secondary);
-    margin-bottom: 15px;
-  }
-  .about p {
-    max-width: 600px;
-  }
-  .skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 20px;
-    justify-items: center;
-    margin-top: 20px;
-  }
-  .skill-item {
-    text-align: center;
-  }
-  .skill-item img {
-    width: 50px;
-    margin-bottom: 8px;
-  }
-  .projects div {
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  .projects img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
-  }
-  .projects img:hover {
-    transform: scale(1.02);
-  }
-  .projects h3 {
-    margin-top: 8px;
-    color: var(--text);
-  }
-  .projects p {
-    margin-top: 5px;
-    margin-bottom: 10px;
-  }
-  .contact p {
-    margin: 8px 0;
-  }
-  .contact a {
-    color: var(--secondary);
-    text-decoration: none;
-  }
-  .contact a:hover {
-    text-decoration: underline;
-  }
-  footer {
-    text-align: center;
-    padding: 15px;
-    background: var(--primary);
-    color: var(--white);
-  }
-
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: flex;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rinaldi Agusta - Data Analyst Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      color: #333;
+      background: #f5f5f5;
     }
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background: var(--primary);
-      position: absolute;
-      top: 100%;
-      left: 0;
-    }
-    .nav-links.active {
+    header {
+      background: #005792;
+      color: #fff;
+      padding: 1rem 2rem;
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
     }
     nav a {
-      padding: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      margin-top: 1rem;
+      border-radius: 8px;
+    }
+    h2 {
+      color: #005792;
+      margin-bottom: 1rem;
     }
     .about {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .about img {
+      width: 150px;
+      border-radius: 50%;
+    }
+    .skills {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .skill-item {
+      flex: 1 1 120px;
       text-align: center;
     }
-  }
-</style>
+    .skill-item img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .projects img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .projects h3 {
+      margin: 0.5rem 0 0;
+    }
+    footer {
+      background: #005792;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 0.5rem;
+      }
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>Rinaldi Agusta</h1>
-  <p>Data Analyst & Business Intelligence</p>
-</header>
+  <header>
+    <h1>Rinaldi Agusta</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<nav>
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<div class="container">
   <!-- About -->
   <section id="about">
     <h2>About</h2>
     <div class="about">
-      <img src="rinaldi.jpg" alt="Rinaldi Agusta">
-      <p>Hi, I am <strong>Rinaldi Agusta</strong>, a passionate Data Analyst and Business Intelligence enthusiast. I enjoy transforming data into actionable insights and building impactful dashboards that help drive decision-making.</p>
+      <img src="rinaldi.jpg" alt="Rinaldi Agusta" />
+      <p>Hi, I am <strong>Rinaldi Agusta</strong>, a passionate Data Analyst and Business Intelligence enthusiast. I enjoy turning data into meaningful insights to support decision-making and business growth.</p>
     </div>
   </section>
 
@@ -219,23 +132,23 @@
     <h2>Skills</h2>
     <div class="skills">
       <div class="skill-item">
-        <img src="https://cdn.worldvectorlogo.com/logos/power-bi-2.svg" alt="Power BI">
+        <img src="https://cdn.worldvectorlogo.com/logos/power-bi-2.svg" alt="Power BI" />
         <p>Power BI</p>
       </div>
       <div class="skill-item">
-        <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau">
+        <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau" />
         <p>Tableau</p>
       </div>
       <div class="skill-item">
-        <img src="looker.png" alt="Looker Studio"> <!-- Ubah path di sini -->
-    <p>Looker Studio</p>
+        <img src="looker.png" alt="Looker Studio" />
+        <p>Looker Studio</p>
       </div>
       <div class="skill-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="SQL">
+        <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="SQL" />
         <p>SQL</p>
       </div>
       <div class="skill-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel" />
         <p>Excel</p>
       </div>
     </div>
@@ -245,57 +158,74 @@
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects">
+
+      <!-- Tableau Project -->
       <div>
         <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/AnalisisGameNintendoSwitch/Dashboard1" target="_blank">
-          <img src="https://public.tableau.com/thumb/views/AnalisisGameNintendoSwitch/Dashboard1" alt="Nintendo Switch Game Analysis">
+          <img src="https://public.tableau.com/thumb/views/AnalisisGameNintendoSwitch/Dashboard1" alt="Nintendo Switch Game Analysis" />
         </a>
-        <h3>Nintendo Switch Game Analysis</h3>
+        <h3>Nintendo Switch Game Analysis (Tableau)</h3>
         <p>Analisis data penjualan dan performa game di konsol Nintendo Switch menggunakan Tableau.</p>
       </div>
+
+      <!-- Tableau Project -->
       <div>
         <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/FinancialComplaintsOverview_17396242636660/FCOVERVIEW" target="_blank">
-          <img src="https://public.tableau.com/thumb/views/FinancialComplaintsOverview_17396242636660/FCOVERVIEW" alt="Financial Complaints Overview">
+          <img src="https://public.tableau.com/thumb/views/FinancialComplaintsOverview_17396242636660/FCOVERVIEW" alt="Financial Complaints Overview" />
         </a>
-        <h3>Financial Complaints Overview</h3>
+        <h3>Financial Complaints Overview (Tableau)</h3>
         <p>Dashboard interaktif untuk memvisualisasikan keluhan finansial di sektor perbankan dan asuransi.</p>
       </div>
+
+      <!-- Tableau Project -->
       <div>
         <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/SanFranciscoAirport_17394322135980/Dashboard12" target="_blank">
-          <img src="https://public.tableau.com/thumb/views/SanFranciscoAirport_17394322135980/Dashboard12" alt="San Francisco Airport Dashboard">
+          <img src="https://public.tableau.com/thumb/views/SanFranciscoAirport_17394322135980/Dashboard12" alt="San Francisco Airport Dashboard" />
         </a>
-        <h3>San Francisco Airport Dashboard</h3>
+        <h3>San Francisco Airport Dashboard (Tableau)</h3>
         <p>Dashboard bandara San Francisco yang menampilkan statistik penerbangan, penumpang, dan maskapai.</p>
       </div>
+
+      <!-- Tableau Project -->
       <div>
         <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/EcommerceSalesDashboard_17392621193280/Dashboard1" target="_blank">
-          <img src="https://public.tableau.com/thumb/views/EcommerceSalesDashboard_17392621193280/Dashboard1" alt="Ecommerce Sales Dashboard">
+          <img src="https://public.tableau.com/thumb/views/EcommerceSalesDashboard_17392621193280/Dashboard1" alt="Ecommerce Sales Dashboard" />
         </a>
-        <h3>Ecommerce Sales Dashboard</h3>
+        <h3>Ecommerce Sales Dashboard (Tableau)</h3>
         <p>Dashboard ecommerce untuk memantau penjualan, tren produk, dan performa channel penjualan.</p>
       </div>
+
+      <!-- Looker Studio Project -->
+      <div>
+        <a href="https://lookerstudio.google.com/reporting/8984021d-8bb2-4ba9-aabe-29d699e0eb69" target="_blank">
+          <img src="looker.png" alt="Marketing Performance Dashboard" />
+        </a>
+        <h3>Marketing Performance Dashboard (Looker Studio)</h3>
+        <p>Dashboard Looker Studio untuk memvisualisasikan performa marketing dan engagement.</p>
+      </div>
+
+      <!-- Looker Studio Project -->
+      <div>
+        <a href="https://lookerstudio.google.com/reporting/56de8c02-36e9-4eed-80e7-9f6739c2f3f0" target="_blank">
+          <img src="looker.png" alt="Sales Performance Report" />
+        </a>
+        <h3>Sales Performance Report (Looker Studio)</h3>
+        <p>Analisis data penjualan dan metrik utama perusahaan dengan Looker Studio.</p>
+      </div>
+
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
-    <div class="contact">
-      <p>📞 085885195436</p>
-      <p>📧 rinaldiagusta25@gmail.com</p>
-      <p>🔗 <a href="https://www.linkedin.com/in/rinaldi-agusta" target="_blank">LinkedIn</a></p>
-    </div>
+    <p>Phone: 085885195436</p>
+    <p>Email: <a href="mailto:rinaldiagusta25@gmail.com">rinaldiagusta25@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/rinaldi-agusta" target="_blank">Rinaldi Agusta</a></p>
   </section>
-</div>
 
-<footer>
-  &copy; 2025 Rinaldi Agusta | All Rights Reserved
-</footer>
-
-<script>
-  function toggleMenu() {
-    document.querySelector('.nav-links').classList.toggle('active');
-  }
-</script>
-
+  <footer>
+    &copy; 2025 Rinaldi Agusta. All rights reserved.
+  </footer>
 </body>
 </html>
