@@ -52,7 +52,6 @@
     background: var(--secondary);
   }
 
-  /* Hamburger */
   .menu-toggle {
     display: none;
     flex-direction: column;
@@ -120,20 +119,27 @@
     margin-bottom: 8px;
   }
   .projects div {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    text-align: center;
   }
-  .projects a {
-    display: block;
-    margin: 5px 0;
-    color: var(--secondary);
-    text-decoration: none;
-    font-weight: bold;
+  .projects img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
   }
-  .projects a:hover {
-    color: var(--accent);
+  .projects img:hover {
+    transform: scale(1.02);
+  }
+  .projects h3 {
+    margin-top: 8px;
+    color: var(--text);
   }
   .projects p {
-    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
   }
   .contact p {
     margin: 8px 0;
@@ -241,26 +247,30 @@
     <div class="projects">
       <div>
         <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/AnalisisGameNintendoSwitch/Dashboard1" target="_blank">
-          Nintendo Switch Game Analysis
+          <img src="https://public.tableau.com/thumb/views/AnalisisGameNintendoSwitch/Dashboard1" alt="Nintendo Switch Game Analysis">
         </a>
+        <h3>Nintendo Switch Game Analysis</h3>
         <p>Analisis data penjualan dan performa game di konsol Nintendo Switch menggunakan Tableau.</p>
       </div>
       <div>
         <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/FinancialComplaintsOverview_17396242636660/FCOVERVIEW" target="_blank">
-          Financial Complaints Overview
+          <img src="https://public.tableau.com/thumb/views/FinancialComplaintsOverview_17396242636660/FCOVERVIEW" alt="Financial Complaints Overview">
         </a>
+        <h3>Financial Complaints Overview</h3>
         <p>Dashboard interaktif untuk memvisualisasikan keluhan finansial di sektor perbankan dan asuransi.</p>
       </div>
       <div>
         <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/SanFranciscoAirport_17394322135980/Dashboard12" target="_blank">
-          San Francisco Airport Dashboard
+          <img src="https://public.tableau.com/thumb/views/SanFranciscoAirport_17394322135980/Dashboard12" alt="San Francisco Airport Dashboard">
         </a>
+        <h3>San Francisco Airport Dashboard</h3>
         <p>Dashboard bandara San Francisco yang menampilkan statistik penerbangan, penumpang, dan maskapai.</p>
       </div>
       <div>
         <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/EcommerceSalesDashboard_17392621193280/Dashboard1" target="_blank">
-          Ecommerce Sales Dashboard
+          <img src="https://public.tableau.com/thumb/views/EcommerceSalesDashboard_17392621193280/Dashboard1" alt="Ecommerce Sales Dashboard">
         </a>
+        <h3>Ecommerce Sales Dashboard</h3>
         <p>Dashboard ecommerce untuk memantau penjualan, tren produk, dan performa channel penjualan.</p>
       </div>
     </div>
