@@ -44,6 +44,18 @@
       padding-bottom: 5px;
       margin-top: 40px;
     }
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .about-section img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
     .skills {
       display: flex;
       flex-wrap: wrap;
@@ -84,7 +96,10 @@
     <!-- About -->
     <section id="about">
       <h2>About</h2>
-      <p>Hi, I am Rinaldi Agusta, a passionate <strong>Data Analyst</strong> and <strong>Business Intelligence</strong> enthusiast. I enjoy transforming data into actionable insights and building impactful dashboards.</p>
+      <div class="about-section">
+        <img src="rinaldi.jpg" alt="Rinaldi Agusta">
+        <p>Hi, I am Rinaldi Agusta, a passionate <strong>Data Analyst</strong> and <strong>Business Intelligence</strong> enthusiast. I enjoy transforming data into actionable insights and building impactful dashboards.</p>
+      </div>
     </section>
 
     <!-- Skills -->
