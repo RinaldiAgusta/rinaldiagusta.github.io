@@ -6,55 +6,85 @@
 <title>Rinaldi Agusta | Data Analyst Portfolio</title>
 <style>
   :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --bg-color: #f9f9f9;
-    --text-color: #333;
+    --primary: #2c3e50;
+    --secondary: #2980b9;
+    --bg: #f5f7fa;
+    --white: #fff;
+    --text: #333;
+    --accent: #1abc9c;
   }
   * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
   }
   body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
   }
   header {
-    background: var(--primary-color);
-    color: #fff;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--white);
     padding: 40px 20px;
     text-align: center;
   }
+  header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  /* Menu */
   nav {
-    background: #34495e;
+    background: var(--primary);
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
   }
   nav a {
-    color: #fff;
+    color: var(--white);
     text-decoration: none;
     padding: 15px 20px;
     transition: background 0.3s;
   }
   nav a:hover {
-    background: var(--primary-color);
+    background: var(--secondary);
   }
+
+  /* Hamburger */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+  }
+  .menu-toggle div {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    margin: 4px 0;
+  }
+  .nav-links {
+    display: flex;
+  }
+
   .container {
     max-width: 1000px;
     margin: 30px auto;
     padding: 20px;
-    background: #fff;
+    background: var(--white);
     border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  section {
+    margin-bottom: 50px;
   }
   h2 {
-    margin-bottom: 20px;
-    color: var(--secondary-color);
-    border-bottom: 2px solid var(--secondary-color);
+    margin-bottom: 15px;
+    color: var(--secondary);
+    border-bottom: 2px solid var(--secondary);
     display: inline-block;
     padding-bottom: 4px;
   }
@@ -65,42 +95,51 @@
     text-align: center;
   }
   .about img {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    border: 4px solid var(--secondary);
     margin-bottom: 15px;
-    border: 4px solid var(--secondary-color);
+  }
+  .about p {
+    max-width: 600px;
   }
   .skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
   }
   .skill-item {
-    flex: 1 1 120px;
     text-align: center;
   }
   .skill-item img {
-    width: 60px;
-    margin-bottom: 10px;
+    width: 50px;
+    margin-bottom: 8px;
+  }
+  .projects div {
+    margin-bottom: 15px;
   }
   .projects a {
     display: block;
-    margin: 10px 0;
-    color: var(--secondary-color);
+    margin: 5px 0;
+    color: var(--secondary);
     text-decoration: none;
-    transition: color 0.3s;
+    font-weight: bold;
   }
   .projects a:hover {
-    color: #1abc9c;
+    color: var(--accent);
+  }
+  .projects p {
+    margin-left: 10px;
   }
   .contact p {
-    margin: 10px 0;
+    margin: 8px 0;
   }
   .contact a {
-    color: var(--secondary-color);
+    color: var(--secondary);
     text-decoration: none;
   }
   .contact a:hover {
@@ -108,16 +147,32 @@
   }
   footer {
     text-align: center;
-    padding: 20px;
-    background: #34495e;
-    color: #fff;
-    margin-top: 30px;
+    padding: 15px;
+    background: var(--primary);
+    color: var(--white);
   }
-  @media (min-width: 768px) {
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: var(--primary);
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
+    .nav-links.active {
+      display: flex;
+    }
+    nav a {
+      padding: 10px;
+    }
     .about {
-      flex-direction: row;
-      text-align: left;
-      gap: 30px;
+      text-align: center;
     }
   }
 </style>
@@ -126,14 +181,21 @@
 
 <header>
   <h1>Rinaldi Agusta</h1>
-  <p>Data Analyst & Business Intelligence Enthusiast</p>
+  <p>Data Analyst & Business Intelligence</p>
 </header>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
 <div class="container">
@@ -142,9 +204,7 @@
     <h2>About</h2>
     <div class="about">
       <img src="rinaldi.jpg" alt="Rinaldi Agusta">
-      <div>
-        <p>Hello! I am <strong>Rinaldi Agusta</strong>, a passionate <strong>Data Analyst</strong> and <strong>Business Intelligence</strong> professional. I specialize in transforming data into actionable insights and creating impactful visualizations that drive decision-making.</p>
-      </div>
+      <p>Hi, I am <strong>Rinaldi Agusta</strong>, a passionate Data Analyst and Business Intelligence enthusiast. I enjoy transforming data into actionable insights and building impactful dashboards that help drive decision-making.</p>
     </div>
   </section>
 
@@ -161,8 +221,9 @@
         <p>Tableau</p>
       </div>
       <div class="skill-item">
-  <img src="https://www.gstatic.com/lookerstudio/images/favicon.ico" alt="Looker Studio">
-</div>
+        <img src="https://www.gstatic.com/lookerstudio/images/favicon.ico" alt="Looker Studio">
+        <p>Looker Studio</p>
+      </div>
       <div class="skill-item">
         <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="SQL">
         <p>SQL</p>
@@ -178,10 +239,30 @@
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects">
-      <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/AnalisisGameNintendoSwitch/Dashboard1" target="_blank">Nintendo Switch Game Analysis</a>
-      <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/FinancialComplaintsOverview_17396242636660/FCOVERVIEW" target="_blank">Financial Complaints Overview</a>
-      <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/SanFranciscoAirport_17394322135980/Dashboard12" target="_blank">San Francisco Airport Dashboard</a>
-      <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/EcommerceSalesDashboard_17392621193280/Dashboard1" target="_blank">Ecommerce Sales Dashboard</a>
+      <div>
+        <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/AnalisisGameNintendoSwitch/Dashboard1" target="_blank">
+          Nintendo Switch Game Analysis
+        </a>
+        <p>Analisis data penjualan dan performa game di konsol Nintendo Switch menggunakan Tableau.</p>
+      </div>
+      <div>
+        <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/FinancialComplaintsOverview_17396242636660/FCOVERVIEW" target="_blank">
+          Financial Complaints Overview
+        </a>
+        <p>Dashboard interaktif untuk memvisualisasikan keluhan finansial di sektor perbankan dan asuransi.</p>
+      </div>
+      <div>
+        <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/SanFranciscoAirport_17394322135980/Dashboard12" target="_blank">
+          San Francisco Airport Dashboard
+        </a>
+        <p>Dashboard bandara San Francisco yang menampilkan statistik penerbangan, penumpang, dan maskapai.</p>
+      </div>
+      <div>
+        <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/EcommerceSalesDashboard_17392621193280/Dashboard1" target="_blank">
+          Ecommerce Sales Dashboard
+        </a>
+        <p>Dashboard ecommerce untuk memantau penjualan, tren produk, dan performa channel penjualan.</p>
+      </div>
     </div>
   </section>
 
@@ -197,8 +278,14 @@
 </div>
 
 <footer>
-  &copy; 2025 Rinaldi Agusta. All rights reserved.
+  &copy; 2025 Rinaldi Agusta | All Rights Reserved
 </footer>
+
+<script>
+  function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+  }
+</script>
 
 </body>
 </html>
