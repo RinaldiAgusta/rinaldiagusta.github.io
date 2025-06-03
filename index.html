@@ -15,26 +15,41 @@
   nav a { color: #fff; font-weight: 600; }
   .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
   .menu-toggle span { background: #fff; height: 3px; width: 25px; margin: 3px 0; border-radius: 2px; }
+
   .hero { background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat; color: #fff; height: 300px; display: flex; justify-content: center; align-items: center; text-align: center; }
   .hero h2 { font-size: 2.2rem; text-shadow: 1px 1px 4px rgba(0,0,0,0.5); }
+
   section { background: #fff; margin: 20px auto; padding: 40px 20px; border-radius: 8px; max-width: 1000px; }
   section h2 { color: #0d6efd; text-align: center; margin-bottom: 30px; }
-  .about { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: center; }
+
+  .about { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: center; text-align: center; }
   .about img { width: 200px; border-radius: 50%; }
   .about p { max-width: 600px; }
+
   .skills, .projects { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
   .skill, .project { background: #e7f1ff; border-radius: 8px; padding: 20px; width: 200px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
   .skill img, .project img { width: 50px; margin-bottom: 10px; }
   .project img { width: 100%; border-radius: 6px; }
   .project h3 { font-size: 1rem; margin-top: 10px; }
   .project p { font-size: 0.9rem; }
-  .contact li { list-style: none; margin: 10px 0; display: flex; align-items: center; gap: 10px; }
-  footer { text-align: center; background: #0d6efd; color: #fff; padding: 15px; }
+
+  .contact { list-style: none; padding: 0; text-align: center; }
+  .contact li { margin: 10px 0; display: flex; align-items: center; gap: 10px; justify-content: center; }
+
+  footer { text-align: center; background: #0d6efd; color: #fff; padding: 15px; margin-top: 20px; }
+
+  /* Responsive adjustments */
   @media (max-width: 768px) {
     nav { display: none; flex-direction: column; background: #0d6efd; position: absolute; top: 60px; left: 0; width: 100%; }
     nav.show { display: flex; }
     .menu-toggle { display: flex; }
     .about { flex-direction: column; }
+  }
+
+  @media (max-width: 480px) {
+    .hero h2 { font-size: 1.6rem; padding: 0 10px; }
+    section { padding: 30px 15px; }
+    .skill, .project { width: 100%; }
   }
 </style>
 </head>
@@ -96,7 +111,6 @@
 <section id="projects">
   <h2>Projects</h2>
   <div class="projects">
-    <!-- Tableau -->
     <div class="project">
       <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/AnalisisGameNintendoSwitch/Dashboard1" target="_blank">
         <img src="https://public.tableau.com/thumb/views/AnalisisGameNintendoSwitch/Dashboard1" alt="Nintendo Switch Game Analysis" />
@@ -125,8 +139,6 @@
       <h3>Ecommerce Sales Dashboard</h3>
       <p>Tableau dashboard for analyzing ecommerce sales data.</p>
     </div>
-
-    <!-- Looker Studio -->
     <div class="project">
       <a href="https://lookerstudio.google.com/reporting/8984021d-8bb2-4ba9-aabe-29d699e0eb69" target="_blank">
         <img src="Data_Sebaran_Covid_Indonesia-1.png" alt="Looker Studio Project 1" />
