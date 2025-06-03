@@ -7,14 +7,19 @@
 <style>
   :root {
     --primary: #005792;
-    --secondary: #f5f5f5;
+    --secondary: #f9f9f9;
     --text: #333;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
   body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    color: var(--text);
     background: var(--secondary);
+    color: var(--text);
+    line-height: 1.6;
   }
   header {
     background: var(--primary);
@@ -25,47 +30,53 @@
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 10;
   }
   header h1 {
-    margin: 0;
     font-size: 1.5rem;
   }
   nav a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
     margin-left: 1rem;
+    font-weight: bold;
   }
   section {
     padding: 2rem;
-    max-width: 1100px;
-    margin: 1rem auto;
+    max-width: 1200px;
+    margin: auto;
     background: #fff;
     border-radius: 8px;
+    margin-top: 1rem;
   }
   h2 {
     color: var(--primary);
     margin-bottom: 1rem;
+    text-align: center;
   }
   .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
   .about img {
     width: 150px;
     border-radius: 50%;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
   .skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
-    justify-items: center;
+    justify-content: center;
+  }
+  .skill-item {
+    flex: 0 1 120px;
+    text-align: center;
   }
   .skill-item img {
     width: 50px;
     height: 50px;
-    object-fit: contain;
     margin-bottom: 0.5rem;
   }
   .projects {
@@ -75,11 +86,15 @@
   }
   .projects img {
     width: 100%;
+    height: auto;
     border-radius: 8px;
     display: block;
   }
   .projects h3 {
     margin: 0.5rem 0 0;
+  }
+  .projects p {
+    font-size: 0.9rem;
   }
   footer {
     background: var(--primary);
@@ -88,13 +103,15 @@
     padding: 1rem;
     margin-top: 1rem;
   }
+
+  /* Responsive tweaks */
   @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
     nav {
       margin-top: 0.5rem;
-    }
-    nav a {
-      display: inline-block;
-      margin: 0.5rem 0.5rem 0 0;
     }
   }
 </style>
@@ -116,7 +133,7 @@
   <h2>About</h2>
   <div class="about">
     <img src="rinaldi.jpg" alt="Rinaldi Agusta" />
-    <p>Hi, I am <strong>Rinaldi Agusta</strong>, a passionate Data Analyst and Business Intelligence enthusiast. I enjoy turning data into meaningful insights to support decision-making and business growth.</p>
+    <p>Hi, I am <strong>Rinaldi Agusta</strong>, a passionate Data Analyst and Business Intelligence enthusiast. I love turning data into insights for impactful decisions.</p>
   </div>
 </section>
 
@@ -151,57 +168,48 @@
 <section id="projects">
   <h2>Projects</h2>
   <div class="projects">
-
-    <!-- Tableau Project -->
     <div>
       <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/AnalisisGameNintendoSwitch/Dashboard1" target="_blank">
         <img src="https://public.tableau.com/thumb/views/AnalisisGameNintendoSwitch/Dashboard1" alt="Nintendo Switch Game Analysis" />
       </a>
       <h3>Nintendo Switch Game Analysis (Tableau)</h3>
-      <p>Analisis data penjualan dan performa game di konsol Nintendo Switch menggunakan Tableau.</p>
+      <p>Analisis data penjualan dan performa game di konsol Nintendo Switch.</p>
     </div>
-
     <div>
       <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/FinancialComplaintsOverview_17396242636660/FCOVERVIEW" target="_blank">
         <img src="https://public.tableau.com/thumb/views/FinancialComplaintsOverview_17396242636660/FCOVERVIEW" alt="Financial Complaints Overview" />
       </a>
       <h3>Financial Complaints Overview (Tableau)</h3>
-      <p>Dashboard interaktif untuk memvisualisasikan keluhan finansial di sektor perbankan dan asuransi.</p>
+      <p>Dashboard interaktif untuk memvisualisasikan keluhan finansial.</p>
     </div>
-
     <div>
       <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/SanFranciscoAirport_17394322135980/Dashboard12" target="_blank">
         <img src="https://public.tableau.com/thumb/views/SanFranciscoAirport_17394322135980/Dashboard12" alt="San Francisco Airport Dashboard" />
       </a>
       <h3>San Francisco Airport Dashboard (Tableau)</h3>
-      <p>Dashboard bandara San Francisco yang menampilkan statistik penerbangan, penumpang, dan maskapai.</p>
+      <p>Dashboard bandara San Francisco yang menampilkan statistik penerbangan.</p>
     </div>
-
     <div>
       <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/EcommerceSalesDashboard_17392621193280/Dashboard1" target="_blank">
         <img src="https://public.tableau.com/thumb/views/EcommerceSalesDashboard_17392621193280/Dashboard1" alt="Ecommerce Sales Dashboard" />
       </a>
       <h3>Ecommerce Sales Dashboard (Tableau)</h3>
-      <p>Dashboard ecommerce untuk memantau penjualan, tren produk, dan performa channel penjualan.</p>
+      <p>Dashboard ecommerce untuk memantau penjualan dan tren produk.</p>
     </div>
-
-    <!-- Looker Studio Project -->
     <div>
       <a href="https://lookerstudio.google.com/reporting/8984021d-8bb2-4ba9-aabe-29d699e0eb69" target="_blank">
         <img src="HR_Demography-1.png" alt="HR Demography Dashboard" />
       </a>
       <h3>HR Demography Dashboard (Looker Studio)</h3>
-      <p>Dashboard Looker Studio untuk analisis demografi karyawan dan HR insights.</p>
+      <p>Analisis data demografi karyawan dan HR insights.</p>
     </div>
-
     <div>
       <a href="https://lookerstudio.google.com/reporting/56de8c02-36e9-4eed-80e7-9f6739c2f3f0" target="_blank">
-        <img src="Data_Sebaran_Covid_Indonesia-1.png" alt="Data Sebaran Covid Indonesia" />
+        <img src="Data_Sebaran_Covid_Indonesia-1.png" alt="Covid Indonesia Dashboard" />
       </a>
-      <h3>Data Sebaran Covid Indonesia (Looker Studio)</h3>
-      <p>Visualisasi data sebaran Covid-19 di Indonesia dengan Looker Studio untuk mendukung analisis tren dan wilayah terdampak.</p>
+      <h3>Covid Indonesia Dashboard (Looker Studio)</h3>
+      <p>Visualisasi data sebaran Covid-19 di Indonesia.</p>
     </div>
-
   </div>
 </section>
 
