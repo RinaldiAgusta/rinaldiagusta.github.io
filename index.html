@@ -5,152 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Rinaldi Agusta - Data Analyst Portfolio</title>
 <style>
-  :root {
-    --primary: #005792;
-    --secondary: #f9f9f9;
-    --text: #333;
-  }
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    font-family: Arial, sans-serif;
-    background: var(--secondary);
-    color: var(--text);
-    line-height: 1.6;
-  }
-  header {
-    background: var(--primary);
-    color: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-  header h1 {
-    font-size: 1.5rem;
-  }
-  nav {
-    display: flex;
-  }
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 1rem;
-    font-weight: bold;
-  }
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  .menu-toggle span {
-    background: #fff;
-    height: 3px;
-    width: 25px;
-    margin: 4px 0;
-    border-radius: 3px;
-  }
-  section {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: auto;
-    background: #fff;
-    border-radius: 8px;
-    margin-top: 1rem;
-  }
-  h2 {
-    color: var(--primary);
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  .about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .about img {
-    width: 150px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-  }
-  .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-  }
-  .skill-item {
-    flex: 0 1 120px;
-    text-align: center;
-  }
-  .skill-item img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 0.5rem;
-  }
-  .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-  }
-  .projects img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    display: block;
-  }
-  .projects h3 {
-    margin: 0.5rem 0 0;
-  }
-  .projects p {
-    font-size: 0.9rem;
-  }
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-  }
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .contact-item img {
-    width: 20px;
-    height: 20px;
-  }
-  footer {
-    background: var(--primary);
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 1rem;
-  }
-
+  :root { --primary: #005792; --secondary: #f9f9f9; --text: #333; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: var(--secondary); color: var(--text); line-height: 1.6; }
+  header { background: var(--primary); color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; }
+  header h1 { font-size: 1.5rem; }
+  nav { display: flex; }
+  nav a { color: #fff; text-decoration: none; margin-left: 1rem; font-weight: bold; }
+  .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
+  .menu-toggle span { background: #fff; height: 3px; width: 25px; margin: 4px 0; border-radius: 3px; }
+  section { padding: 2rem; max-width: 1200px; margin: auto; background: #fff; border-radius: 8px; margin-top: 1rem; }
+  h2 { color: var(--primary); margin-bottom: 1rem; text-align: center; }
+  .about { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .about img { width: 150px; border-radius: 50%; margin-bottom: 1rem; }
+  .skills { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+  .skill-item { flex: 0 1 120px; text-align: center; }
+  .skill-item img { width: 50px; height: 50px; margin-bottom: 0.5rem; }
+  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+  .projects img { width: 100%; height: auto; border-radius: 8px; display: block; }
+  .projects h3 { margin: 0.5rem 0 0; }
+  .projects p { font-size: 0.9rem; }
+  .contact-info { display: flex; flex-direction: column; gap: 0.5rem; align-items: center; }
+  .contact-item { display: flex; align-items: center; gap: 0.5rem; }
+  .contact-item img { width: 20px; height: 20px; }
+  footer { background: var(--primary); color: #fff; text-align: center; padding: 1rem; margin-top: 1rem; }
   @media (max-width: 768px) {
-    nav {
-      display: none;
-      flex-direction: column;
-      background: var(--primary);
-      width: 100%;
-      position: absolute;
-      top: 60px;
-      left: 0;
-    }
-    nav a {
-      margin: 1rem;
-    }
-    .menu-toggle {
-      display: flex;
-    }
+    nav { display: none; flex-direction: column; background: var(--primary); width: 100%; position: absolute; top: 60px; left: 0; }
+    nav a { margin: 1rem; }
+    .menu-toggle { display: flex; }
   }
 </style>
 </head>
@@ -159,9 +41,7 @@
 <header>
   <h1>Rinaldi Agusta</h1>
   <div class="menu-toggle" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </div>
   <nav>
     <a href="#about">About</a>
@@ -171,43 +51,25 @@
   </nav>
 </header>
 
-<!-- About -->
 <section id="about">
   <h2>About</h2>
   <div class="about">
     <img src="rinaldi.jpg" alt="Rinaldi Agusta" />
-    <p>Hi, I am <strong>Rinaldi Agusta</strong>, a passionate Data Analyst and Business Intelligence enthusiast. I love turning data into insights for impactful decisions.</p>
+    <p>Hi, I am <strong>Rinaldi Agusta</strong>, a passionate Data Analyst and Business Intelligence enthusiast.</p>
   </div>
 </section>
 
-<!-- Skills -->
 <section id="skills">
   <h2>Skills</h2>
   <div class="skills">
-    <div class="skill-item">
-      <img src="https://cdn.worldvectorlogo.com/logos/power-bi-2.svg" alt="Power BI" />
-      <p>Power BI</p>
-    </div>
-    <div class="skill-item">
-      <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau" />
-      <p>Tableau</p>
-    </div>
-    <div class="skill-item">
-      <img src="looker.png" alt="Looker Studio" />
-      <p>Looker Studio</p>
-    </div>
-    <div class="skill-item">
-      <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="SQL" />
-      <p>SQL</p>
-    </div>
-    <div class="skill-item">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel" />
-      <p>Excel</p>
-    </div>
+    <div class="skill-item"><img src="https://cdn.worldvectorlogo.com/logos/power-bi-2.svg" alt="Power BI" /><p>Power BI</p></div>
+    <div class="skill-item"><img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau" /><p>Tableau</p></div>
+    <div class="skill-item"><img src="looker.png" alt="Looker Studio" /><p>Looker Studio</p></div>
+    <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="SQL" /><p>SQL</p></div>
+    <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel" /><p>Excel</p></div>
   </div>
 </section>
 
-<!-- Projects -->
 <section id="projects">
   <h2>Projects</h2>
   <div class="projects">
@@ -253,25 +115,29 @@
       <h3>Covid Indonesia Dashboard (Looker Studio)</h3>
       <p>Visualisasi data sebaran Covid-19 di Indonesia.</p>
     </div>
+    <div>
+      <a href="https://lookerstudio.google.com/reporting/950bbaac-1ac8-47fa-8932-7d56d1170a5e" target="_blank">
+        <img src="https://via.placeholder.com/300x200.png?text=Looker+Studio+New+Dashboard" alt="New Looker Studio Dashboard" />
+      </a>
+      <h3>New Looker Studio Dashboard (Looker Studio)</h3>
+      <p>Dashboard baru yang berfokus pada analisis data bisnis dan visualisasi dinamis.</p>
+    </div>
+    <div>
+      <a href="https://lookerstudio.google.com/reporting/950bbaac-1ac8-47fa-8932-7d56d1170a5e" target="_blank">
+        <img src="Data_Persentase_Perokok_Indonesia-1.png" alt="Data Persentase Perokok Indonesia" />
+      </a>
+      <h3>Data Persentase Perokok Indonesia (Looker Studio)</h3>
+      <p>Dashboard interaktif yang menampilkan data persentase perokok di Indonesia.</p>
+    </div>
   </div>
 </section>
 
-<!-- Contact -->
 <section id="contact">
   <h2>Contact</h2>
   <div class="contact-info">
-    <div class="contact-item">
-      <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone" />
-      <p>085885195436</p>
-    </div>
-    <div class="contact-item">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" />
-      <p><a href="mailto:rinaldiagusta25@gmail.com">rinaldiagusta25@gmail.com</a></p>
-    </div>
-    <div class="contact-item">
-      <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" />
-      <p><a href="https://www.linkedin.com/in/rinaldi-agusta" target="_blank">LinkedIn Profile</a></p>
-    </div>
+    <div class="contact-item"><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone" /><p>085885195436</p></div>
+    <div class="contact-item"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" /><p><a href="mailto:rinaldiagusta25@gmail.com">rinaldiagusta25@gmail.com</a></p></div>
+    <div class="contact-item"><img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" /><p><a href="https://www.linkedin.com/in/rinaldi-agusta" target="_blank">LinkedIn Profile</a></p></div>
   </div>
 </section>
 
@@ -280,10 +146,10 @@
 </footer>
 
 <script>
-  function toggleMenu() {
-    const nav = document.querySelector("nav");
-    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-  }
+function toggleMenu() {
+  const nav = document.querySelector("nav");
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+}
 </script>
 
 </body>
