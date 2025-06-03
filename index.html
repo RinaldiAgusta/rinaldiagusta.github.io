@@ -112,6 +112,21 @@
   .projects p {
     font-size: 0.9rem;
   }
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .contact-item img {
+    width: 20px;
+    height: 20px;
+  }
   footer {
     background: var(--primary);
     color: #fff;
@@ -120,7 +135,6 @@
     margin-top: 1rem;
   }
 
-  /* Responsive tweaks */
   @media (max-width: 768px) {
     nav {
       display: none;
@@ -245,9 +259,20 @@
 <!-- Contact -->
 <section id="contact">
   <h2>Contact</h2>
-  <p>Phone: 085885195436</p>
-  <p>Email: <a href="mailto:rinaldiagusta25@gmail.com">rinaldiagusta25@gmail.com</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/rinaldi-agusta" target="_blank">Rinaldi Agusta</a></p>
+  <div class="contact-info">
+    <div class="contact-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone" />
+      <p>085885195436</p>
+    </div>
+    <div class="contact-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" />
+      <p><a href="mailto:rinaldiagusta25@gmail.com">rinaldiagusta25@gmail.com</a></p>
+    </div>
+    <div class="contact-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" />
+      <p><a href="https://www.linkedin.com/in/rinaldi-agusta" target="_blank">LinkedIn Profile</a></p>
+    </div>
+  </div>
 </section>
 
 <footer>
