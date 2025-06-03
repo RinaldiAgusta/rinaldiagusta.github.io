@@ -6,45 +6,154 @@
 <title>Rinaldi Agusta - Data Analyst Portfolio</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: Arial, sans-serif; color: #333; background: #f5f5f5; line-height: 1.6; }
-  a { text-decoration: none; color: #0d6efd; }
-  header { background: #0d6efd; color: #fff; padding: 15px 20px; position: sticky; top: 0; z-index: 999; }
-  header .container { display: flex; justify-content: space-between; align-items: center; }
-  header h1 { font-size: 1.5rem; }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #222; background: #f9f9f9; line-height: 1.6; }
+  a { text-decoration: none; color: #007bff; }
+  header { background: #007bff; color: #fff; padding: 15px 20px; position: sticky; top: 0; z-index: 999; }
+  header .container { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
+  header h1 { font-weight: 700; font-size: 1.8rem; letter-spacing: 1px; }
   nav { display: flex; gap: 20px; }
-  nav a { color: #fff; font-weight: 600; }
+  nav a { color: #fff; font-weight: 600; transition: color 0.3s; }
+  nav a:hover { color: #cce5ff; }
   .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
-  .menu-toggle span { background: #fff; height: 3px; width: 25px; margin: 3px 0; border-radius: 2px; }
+  .menu-toggle span { background: #fff; height: 3px; width: 25px; margin: 4px 0; border-radius: 2px; }
   .hero {
-    color: #fff;
-    height: 300px;
+    position: relative;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
     text-align: center;
-    background: url('https://images.unsplash.com/photo-1607799279861-3d2fda80e6f9?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1556741533-f6acd647d2fb?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
   }
-  .hero h2 { font-size: 2.2rem; text-shadow: 1px 1px 4px rgba(0,0,0,0.5); }
-  section { background: #fff; margin: 20px auto; padding: 40px 20px; border-radius: 8px; max-width: 1000px; }
-  section h2 { color: #0d6efd; text-align: center; margin-bottom: 30px; }
-  .about { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: center; }
-  .about img { width: 200px; border-radius: 50%; }
-  .about p { max-width: 600px; }
-  .skills, .projects { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-  .skill, .project { background: #e7f1ff; border-radius: 8px; padding: 20px; width: 200px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-  .skill img, .project img { width: 50px; margin-bottom: 10px; }
-  .project img { width: 100%; border-radius: 6px; }
-  .project h3 { font-size: 1rem; margin-top: 10px; }
-  .project p { font-size: 0.9rem; }
-  .contact li { list-style: none; margin: 10px 0; display: flex; align-items: center; gap: 10px; }
-  footer { text-align: center; background: #0d6efd; color: #fff; padding: 15px; }
-  .resume-container { text-align: center; }
-  .resume-container a { display: inline-block; background: #0d6efd; color: #fff; padding: 10px 20px; border-radius: 5px; margin-top: 10px; }
+  .hero h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  }
+  section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .about {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+  .about img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  }
+  .about p {
+    max-width: 650px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #444;
+  }
+  .skills, .projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+  .skill, .project {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px 20px;
+    width: 220px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .skill:hover, .project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  }
+  .skill img, .project img {
+    width: 60px;
+    margin-bottom: 15px;
+  }
+  .project img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    height: 140px;
+  }
+  .project h3 {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #007bff;
+  }
+  .project p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 10px;
+    min-height: 70px;
+  }
+  .contact {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .contact li {
+    list-style: none;
+    font-size: 1rem;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #444;
+  }
+  .contact img {
+    width: 24px;
+    filter: invert(33%) sepia(70%) saturate(541%) hue-rotate(184deg) brightness(95%) contrast(92%);
+  }
+  footer {
+    text-align: center;
+    background: #007bff;
+    color: #fff;
+    padding: 20px 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .resume-container {
+    text-align: center;
+  }
+  .resume-container a {
+    display: inline-block;
+    margin-top: 15px;
+    background: #007bff;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 6px 15px rgba(0,123,255,0.4);
+    transition: background 0.3s ease;
+  }
+  .resume-container a:hover {
+    background: #0056b3;
+  }
+
   @media (max-width: 768px) {
-    nav { display: none; flex-direction: column; background: #0d6efd; position: absolute; top: 60px; left: 0; width: 100%; }
+    nav { display: none; flex-direction: column; background: #007bff; position: absolute; top: 60px; left: 0; width: 100%; }
     nav.show { display: flex; }
     .menu-toggle { display: flex; }
     .about { flex-direction: column; }
+    .hero h2 { font-size: 2rem; padding: 0 15px; }
   }
 </style>
 </head>
@@ -53,8 +162,10 @@
 <header>
   <div class="container">
     <h1>Rinaldi Agusta</h1>
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span><span></span><span></span>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
     <nav id="nav-menu">
       <a href="#about">About</a>
@@ -74,7 +185,7 @@
   <h2>About Me</h2>
   <div class="about">
     <img src="rinaldi.jpg" alt="Rinaldi Agusta" />
-    <p>Hi! I'm <strong>Rinaldi Agusta</strong>, a data analyst passionate about turning data into meaningful insights. I love using BI tools like Power BI, Tableau, and Looker Studio to help businesses make better decisions.</p>
+    <p>Hi! I'm <strong>Rinaldi Agusta</strong>, a passionate data analyst dedicated to transforming complex data into clear, actionable insights. Skilled in Power BI, Tableau, and Looker Studio, I help businesses unlock their full potential through data-driven decisions.</p>
   </div>
 </section>
 
@@ -108,49 +219,49 @@
   <h2>Projects</h2>
   <div class="projects">
     <div class="project">
-      <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/AnalisisGameNintendoSwitch/Dashboard1" target="_blank">
+      <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/AnalisisGameNintendoSwitch/Dashboard1" target="_blank" rel="noopener noreferrer">
         <img src="https://public.tableau.com/thumb/views/AnalisisGameNintendoSwitch/Dashboard1" alt="Nintendo Switch Game Analysis" />
       </a>
       <h3>Nintendo Switch Game Analysis</h3>
       <p>Dashboard Tableau yang menganalisis data penjualan dan performa game Nintendo Switch. Menampilkan tren penjualan, peringkat game, dan insight dari preferensi gamer.</p>
     </div>
     <div class="project">
-      <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/FinancialComplaintsOverview_17396242636660/FCOVERVIEW" target="_blank">
+      <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/FinancialComplaintsOverview_17396242636660/FCOVERVIEW" target="_blank" rel="noopener noreferrer">
         <img src="https://public.tableau.com/thumb/views/FinancialComplaintsOverview_17396242636660/FCOVERVIEW" alt="Financial Complaints Overview" />
       </a>
       <h3>Financial Complaints Overview</h3>
       <p>Visualisasi Tableau yang memetakan data keluhan finansial. Menganalisis tren, penyebab utama, dan distribusi data untuk membantu pemangku kepentingan membuat keputusan berbasis data.</p>
     </div>
     <div class="project">
-      <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/SanFranciscoAirport_17394322135980/Dashboard12" target="_blank">
+      <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/SanFranciscoAirport_17394322135980/Dashboard12" target="_blank" rel="noopener noreferrer">
         <img src="https://public.tableau.com/thumb/views/SanFranciscoAirport_17394322135980/Dashboard12" alt="San Francisco Airport Analysis" />
       </a>
       <h3>San Francisco Airport Analysis</h3>
       <p>Dashboard Tableau yang menyajikan data lalu lintas bandara San Francisco. Mencakup statistik penerbangan, pola kedatangan dan keberangkatan, serta insight performa bandara.</p>
     </div>
     <div class="project">
-      <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/EcommerceSalesDashboard_17392621193280/Dashboard1" target="_blank">
+      <a href="https://public.tableau.com/app/profile/rinaldi.agusta8295/viz/EcommerceSalesDashboard_17392621193280/Dashboard1" target="_blank" rel="noopener noreferrer">
         <img src="https://public.tableau.com/thumb/views/EcommerceSalesDashboard_17392621193280/Dashboard1" alt="Ecommerce Sales Dashboard" />
       </a>
       <h3>Ecommerce Sales Dashboard</h3>
       <p>Dashboard Tableau interaktif yang melacak data penjualan ecommerce. Memberikan insight terkait tren penjualan, performa produk, dan analisis KPI bisnis.</p>
     </div>
     <div class="project">
-      <a href="https://lookerstudio.google.com/reporting/8984021d-8bb2-4ba9-aabe-29d699e0eb69" target="_blank">
+      <a href="https://lookerstudio.google.com/reporting/8984021d-8bb2-4ba9-aabe-29d699e0eb69" target="_blank" rel="noopener noreferrer">
         <img src="Data_Sebaran_Covid_Indonesia-1.png" alt="Marketing Performance Report" />
       </a>
       <h3>Marketing Performance Report</h3>
       <p>Laporan Looker Studio yang memvisualisasikan performa kampanye marketing. Memberikan analisis ROI, engagement, dan rekomendasi strategis untuk meningkatkan kampanye.</p>
     </div>
     <div class="project">
-      <a href="https://lookerstudio.google.com/reporting/56de8c02-36e9-4eed-80e7-9f6739c2f3f0" target="_blank">
+      <a href="https://lookerstudio.google.com/reporting/56de8c02-36e9-4eed-80e7-9f6739c2f3f0" target="_blank" rel="noopener noreferrer">
         <img src="HR_Demography-1.png" alt="Website Traffic Dashboard" />
       </a>
       <h3>Website Traffic Dashboard</h3>
       <p>Dashboard Looker Studio untuk memantau trafik website. Menyajikan data kunjungan, halaman terpopuler, dan insight terkait perilaku pengguna.</p>
     </div>
     <div class="project">
-      <a href="https://lookerstudio.google.com/reporting/950bbaac-1ac8-47fa-8932-7d56d1170a5e" target="_blank">
+      <a href="https://lookerstudio.google.com/reporting/950bbaac-1ac8-47fa-8932-7d56d1170a5e" target="_blank" rel="noopener noreferrer">
         <img src="Data_Persentase_Perokok_Indonesia-1.png" alt="Retail Performance Report" />
       </a>
       <h3>Retail Performance Report</h3>
@@ -163,16 +274,16 @@
   <h2>Resume</h2>
   <div class="resume-container">
     <p>You can download my resume below:</p>
-    <a href="resume-rinaldi-agusta.pdf" target="_blank">Download Resume</a>
+    <a href="resume-rinaldi-agusta.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
   </div>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
   <ul class="contact">
-    <li><img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" width="20" alt="Phone"/> 085885195436</li>
-    <li><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" width="20" alt="Email"/> <a href="mailto:rinaldiagusta25@gmail.com">rinaldiagusta25@gmail.com</a></li>
-    <li><img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="20" alt="LinkedIn"/> <a href="https://www.linkedin.com/in/rinaldi-agusta" target="_blank">linkedin.com/in/rinaldi-agusta</a></li>
+    <li><img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Phone"/> 085885195436</li>
+    <li><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email"/> <a href="mailto:rinaldiagusta25@gmail.com">rinaldiagusta25@gmail.com</a></li>
+    <li><img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn"/> <a href="https://www.linkedin.com/in/rinaldi-agusta" target="_blank" rel="noopener noreferrer">linkedin.com/in/rinaldi-agusta</a></li>
   </ul>
 </section>
 
