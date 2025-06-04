@@ -199,7 +199,7 @@
 </header>
 
 <section class="hero">
-  <h2>Hello, I'm Rinaldi Agusta</h2>
+  <h2 id="hero-typing"></h2>
 </section>
 
 <section id="about" class="fade-in">
@@ -328,6 +328,9 @@
   &copy; 2025 Rinaldi Agusta. All rights reserved.
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+ 
 <script>
   // Menu toggle for mobile
   const menuToggle = document.getElementById('menu-toggle');
@@ -357,6 +360,14 @@
 
   window.addEventListener('scroll', scrollFadeIn);
   window.addEventListener('load', scrollFadeIn);
+const typed = new Typed('#hero-typing', {
+    strings: ["Hello, I'm Rinaldi Agusta", "I'm a Data Analyst", "Transforming Data into Insights"],
+    typeSpeed: 50,
+    backSpeed: 25,
+    backDelay: 1500,
+    loop: true
+  });
+ 
 </script>
 
 </body>
