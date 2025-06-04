@@ -3,11 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Portfolio of Rinaldi Agusta, a passionate data analyst skilled in Power BI, Tableau, Looker Studio, and SQL." />
-<link rel="icon" href="favicon.ico" type="image/x-icon" />
 <title>Rinaldi Agusta - Data Analyst Portfolio</title>
 <style>
-  /* (CSS yang sama persis dengan yang sudah kamu buat) */
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #222; background: #f9f9f9; line-height: 1.6; }
   a { text-decoration: none; color: #007bff; }
@@ -19,38 +16,151 @@
   nav a:hover { color: #cce5ff; }
   .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
   .menu-toggle span { background: #fff; height: 3px; width: 25px; margin: 4px 0; border-radius: 2px; }
-  .hero { position: relative; height: 400px; display: flex; justify-content: center; align-items: center; color: #fff; text-align: center; background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://wallpaperaccess.com/full/1826227.jpg') center/cover no-repeat; }
-  .hero h2 { font-size: 3rem; font-weight: 700; letter-spacing: 2px; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
-  section { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-  section h2 { text-align: center; font-size: 2rem; color: #007bff; margin-bottom: 30px; font-weight: 700; letter-spacing: 1px; }
-  .about { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: center; }
-  .about img { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
-  .about p { max-width: 650px; font-size: 1.1rem; line-height: 1.5; color: #444; }
-  .skills, .projects { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
-  .projects { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 10px; scroll-snap-type: x mandatory; }
-  .projects::-webkit-scrollbar { height: 8px; }
-  .projects::-webkit-scrollbar-thumb { background: #007bff; border-radius: 4px; }
-  .projects::-webkit-scrollbar-track { background: #eee; }
-  .project { background: #fff; border-radius: 12px; padding: 25px 20px; flex: 0 0 280px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); text-align: center; transition: transform 0.3s ease; scroll-snap-align: start; }
-  .project:hover { transform: translateY(-8px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
-  .project img { width: 100%; border-radius: 10px; object-fit: cover; height: 140px; }
-  .project h3 { margin-top: 15px; font-size: 1.1rem; color: #007bff; }
-  .project p { font-size: 0.95rem; color: #555; margin-top: 10px; min-height: 70px; }
-  .skills { flex-wrap: wrap; }
-  .skill { background: #fff; border-radius: 12px; padding: 25px 20px; width: 220px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); text-align: center; transition: transform 0.3s ease; }
-  .skill:hover { transform: translateY(-8px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
-  .skill img { width: 60px; margin-bottom: 15px; }
-  .contact { max-width: 400px; margin: 0 auto; }
-  .contact li { list-style: none; font-size: 1rem; margin: 15px 0; display: flex; align-items: center; gap: 15px; color: #444; }
-  .contact img { width: 24px; filter: invert(33%) sepia(70%) saturate(541%) hue-rotate(184deg) brightness(95%) contrast(92%); }
-  footer { text-align: center; background: #007bff; color: #fff; padding: 20px 0; font-weight: 600; letter-spacing: 1px; }
-  .resume-container { text-align: center; margin-top: 20px; }
-  .resume-container a { display: inline-block; margin-top: 15px; background: #007bff; color: #fff; padding: 12px 28px; border-radius: 30px; font-weight: 600; box-shadow: 0 6px 15px rgba(0,123,255,0.4); transition: background 0.3s ease; }
-  .resume-container a:hover { background: #0056b3; }
-  @media (max-width: 768px) { nav { display: none; flex-direction: column; background: #007bff; position: absolute; top: 60px; left: 0; width: 100%; } nav.show { display: flex; } .menu-toggle { display: flex; } .about { flex-direction: column; } .hero h2 { font-size: 2rem; padding: 0 15px; } }
+  .hero {
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url('https://wallpaperaccess.com/full/1826227.jpg')
+    center/cover no-repeat;
+  }
+  .hero h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  }
+  section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .about {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+  .about img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  }
+  .about p {
+    max-width: 650px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #444;
+  }
+  .skills, .projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+  .skill, .project {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px 20px;
+    width: 220px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .skill:hover, .project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  }
+  .skill img, .project img {
+    width: 60px;
+    margin-bottom: 15px;
+  }
+  .project img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    height: 140px;
+  }
+  .project h3 {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #007bff;
+  }
+  .project p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 10px;
+    min-height: 70px;
+  }
+  .contact {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .contact li {
+    list-style: none;
+    font-size: 1rem;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #444;
+  }
+  .contact img {
+    width: 24px;
+    filter: invert(33%) sepia(70%) saturate(541%) hue-rotate(184deg) brightness(95%) contrast(92%);
+  }
+  footer {
+    text-align: center;
+    background: #007bff;
+    color: #fff;
+    padding: 20px 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .resume-container {
+    text-align: center;
+  }
+  .resume-container a {
+    display: inline-block;
+    margin-top: 15px;
+    background: #007bff;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 6px 15px rgba(0,123,255,0.4);
+    transition: background 0.3s ease;
+  }
+  .resume-container a:hover {
+    background: #0056b3;
+  }
+
+  @media (max-width: 768px) {
+    nav { display: none; flex-direction: column; background: #007bff; position: absolute; top: 60px; left: 0; width: 100%; }
+    nav.show { display: flex; }
+    .menu-toggle { display: flex; }
+    .about { flex-direction: column; }
+    .hero h2 { font-size: 2rem; padding: 0 15px; }
+  }
 </style>
 </head>
 <body>
+
 <header>
   <div class="container">
     <h1>Rinaldi Agusta</h1>
@@ -63,6 +173,7 @@
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -77,9 +188,6 @@
   <div class="about">
     <img src="rinaldi.jpg" alt="Rinaldi Agusta" />
     <p>Hi! I'm <strong>Rinaldi Agusta</strong>, a passionate data analyst dedicated to transforming complex data into clear, actionable insights. Skilled in Power BI, Tableau, and Looker Studio, I help businesses unlock their full potential through data-driven decisions.</p>
-  <a href="resume-rinaldi-agusta.pdf" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 15px; background: #007bff; color: #fff; padding: 10px 20px; border-radius: 30px; font-weight: 600; text-decoration: none;">Download Resume</a>
-      </p>
-    </div>
   </div>
 </section>
 
@@ -164,6 +272,13 @@
   </div>
 </section>
 
+<section id="resume">
+  <h2>Resume</h2>
+  <div class="resume-container">
+    <p>You can download my resume below:</p>
+    <a href="resume-rinaldi-agusta.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
+  </div>
+</section>
 
 <section id="contact">
   <h2>Contact</h2>
@@ -177,7 +292,6 @@
 <footer>
   &copy; 2025 Rinaldi Agusta
 </footer>
-
 <script>
   const toggle = document.getElementById('menu-toggle');
   const navMenu = document.getElementById('nav-menu');
