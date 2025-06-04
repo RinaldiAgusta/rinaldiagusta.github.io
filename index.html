@@ -73,22 +73,26 @@
     gap: 25px;
     justify-content: center;
   }
-  .skill, .project {
+  .projects {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+  }
+  .project {
     background: #fff;
     border-radius: 12px;
     padding: 25px 20px;
-    width: 220px;
+    flex: 0 0 280px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.07);
     text-align: center;
     transition: transform 0.3s ease;
+    scroll-snap-align: start;
   }
-  .skill:hover, .project:hover {
+  .project:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-  }
-  .skill img, .project img {
-    width: 60px;
-    margin-bottom: 15px;
   }
   .project img {
     width: 100%;
@@ -106,6 +110,26 @@
     color: #555;
     margin-top: 10px;
     min-height: 70px;
+  }
+  .skills {
+    flex-wrap: wrap;
+  }
+  .skill {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px 20px;
+    width: 220px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .skill:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  }
+  .skill img {
+    width: 60px;
+    margin-bottom: 15px;
   }
   .contact {
     max-width: 400px;
@@ -150,37 +174,12 @@
     background: #0056b3;
   }
 
- @media (max-width: 768px) {
+  @media (max-width: 768px) {
     nav { display: none; flex-direction: column; background: #007bff; position: absolute; top: 60px; left: 0; width: 100%; }
     nav.show { display: flex; }
     .menu-toggle { display: flex; }
     .about { flex-direction: column; }
     .hero h2 { font-size: 2rem; padding: 0 15px; }
-
-    /* Scroll horizontal untuk projects di mobile */
-    .projects {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 10px;
-    }
-    .project {
-      flex: 0 0 auto;
-      min-width: 240px;
-      scroll-snap-align: start;
-    }
-    /* Style scrollbar (opsional) */
-    .projects::-webkit-scrollbar {
-      height: 6px;
-    }
-    .projects::-webkit-scrollbar-thumb {
-      background: rgba(0, 123, 255, 0.6);
-      border-radius: 3px;
-    }
-    .projects::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
   }
 </style>
 </head>
