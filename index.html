@@ -4,8 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Rinaldi Agusta - Data Analyst Portfolio</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #222; background: #f9f9f9; line-height: 1.6; }
   a { text-decoration: none; color: #007bff; }
   header { background: #007bff; color: #fff; padding: 15px 20px; position: sticky; top: 0; z-index: 999; }
@@ -16,6 +18,7 @@
   nav a:hover { color: #cce5ff; }
   .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
   .menu-toggle span { background: #fff; height: 3px; width: 25px; margin: 4px 0; border-radius: 2px; }
+
   .hero {
     position: relative;
     height: 400px;
@@ -66,7 +69,7 @@
     font-size: 1.1rem;
     line-height: 1.5;
     color: #444;
-   text-align: center;
+    text-align: center;
   }
   .skills, .projects {
     display: flex;
@@ -90,6 +93,7 @@
   .skill img, .project img {
     width: 60px;
     margin-bottom: 15px;
+    loading: lazy;
   }
   .project img {
     width: 100%;
@@ -149,6 +153,15 @@
   }
   .resume-container a:hover {
     background: #0056b3;
+  }
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   @media (max-width: 768px) {
