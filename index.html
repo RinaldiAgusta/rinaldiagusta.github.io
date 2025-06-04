@@ -1,197 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Rinaldi Agusta - Data Analyst Portfolio</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rinaldi Agusta | Portfolio</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #222; background: #f9f9f9; line-height: 1.6; }
-  a { text-decoration: none; color: #007bff; }
-  header { background: #007bff; color: #fff; padding: 15px 20px; position: sticky; top: 0; z-index: 999; }
-  header .container { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
-  header h1 { font-weight: 700; font-size: 1.8rem; letter-spacing: 1px; }
-  nav { display: flex; gap: 20px; }
-  nav a { color: #fff; font-weight: 600; transition: color 0.3s; }
-  nav a:hover { color: #cce5ff; }
-  .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
-  .menu-toggle span { background: #fff; height: 3px; width: 25px; margin: 4px 0; border-radius: 2px; }
-
-  .hero {
+  /* style header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #007bff;
+    color: #fff;
     position: relative;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url('https://wallpaperaccess.com/full/1826227.jpg')
-    center/cover no-repeat;
   }
-  .hero h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  header h1 {
+    margin: 0;
   }
-  section {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  section h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: #007bff;
-    margin-bottom: 30px;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-  .about {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: center;
-    justify-content: center;
-  }
-  .about img {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  }
-  .about p {
-    max-width: 650px;
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #444;
-    text-align: center;
-  }
-  .skills, .projects {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    justify-content: center;
-  }
-  .skill, .project {
-    background: #fff;
-    border-radius: 12px;
-    padding: 25px 20px;
-    width: 220px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-  .skill:hover, .project:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-  }
-  .skill img, .project img {
-    width: 60px;
-    margin-bottom: 15px;
-    loading: lazy;
-  }
-  .project img {
-    width: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    height: 140px;
-  }
-  .project h3 {
-    margin-top: 15px;
-    font-size: 1.1rem;
-    color: #007bff;
-  }
-  .project p {
-    font-size: 0.95rem;
-    color: #555;
-    margin-top: 10px;
-    min-height: 70px;
-  }
-  .contact {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  .contact li {
-    list-style: none;
-    font-size: 1rem;
-    margin: 15px 0;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color: #444;
-  }
-  .contact img {
-    width: 24px;
-    filter: invert(33%) sepia(70%) saturate(541%) hue-rotate(184deg) brightness(95%) contrast(92%);
-  }
-  footer {
-    text-align: center;
-    background: #007bff;
-    color: #fff;
-    padding: 20px 0;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-  .resume-container {
-    text-align: center;
-  }
-  .resume-container a {
+  .menu-toggle {
+    cursor: pointer;
     display: inline-block;
-    margin-top: 15px;
-    background: #007bff;
-    color: #fff;
-    padding: 12px 28px;
-    border-radius: 30px;
-    font-weight: 600;
-    box-shadow: 0 6px 15px rgba(0,123,255,0.4);
-    transition: background 0.3s ease;
   }
-  .resume-container a:hover {
-    background: #0056b3;
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+    transition: 0.3s;
   }
-  .fade-in {
+  /* animasi toggle */
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .menu-toggle.active span:nth-child(2) {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .fade-in.active {
-    opacity: 1;
-    transform: translateY(0);
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
   }
-
-  @media (max-width: 768px) {
-    nav { display: none; flex-direction: column; background: #007bff; position: absolute; top: 60px; left: 0; width: 100%; }
-    nav.show { display: flex; }
-    .menu-toggle { display: flex; }
-    .about { flex-direction: column; }
-    .hero h2 { font-size: 2rem; padding: 0 15px; }
+  /* overlay */
+  .overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+    z-index: 998;
+    display: none;
+  }
+  .overlay.show {
+    display: block;
+  }
+  /* nav mobile muncul dari kanan */
+  #nav-menu-mobile {
+    position: fixed;
+    top: 0; right: -250px;
+    width: 250px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 60px 20px;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+  #nav-menu-mobile a {
+    color: #007bff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  #nav-menu-mobile.show {
+    right: 0;
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="container">
-    <h1>Rinaldi Agusta</h1>
-    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav id="nav-menu">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      
-      <a href="#contact">Contact</a>
-    </nav>
+  <h1>Rinaldi Agusta</h1>
+  <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 </header>
+
+<!-- Overlay untuk blur dan close -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Navigasi mobile -->
+<nav id="nav-menu-mobile">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const navMenuMobile = document.getElementById('nav-menu-mobile');
+  const overlay = document.getElementById('overlay');
+
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active');
+    navMenuMobile.classList.toggle('show');
+    overlay.classList.toggle('show');
+  });
+
+  overlay.addEventListener('click', () => {
+    toggle.classList.remove('active');
+    navMenuMobile.classList.remove('show');
+    overlay.classList.remove('show');
+  });
+</script>
+
+</body>
 
 <section class="hero">
   <h2>Hello, I'm Rinaldi Agusta</h2>
