@@ -150,17 +150,41 @@
     background: #0056b3;
   }
 
-  @media (max-width: 768px) {
+ @media (max-width: 768px) {
     nav { display: none; flex-direction: column; background: #007bff; position: absolute; top: 60px; left: 0; width: 100%; }
     nav.show { display: flex; }
     .menu-toggle { display: flex; }
     .about { flex-direction: column; }
     .hero h2 { font-size: 2rem; padding: 0 15px; }
+
+    /* Scroll horizontal untuk projects di mobile */
+    .projects {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 10px;
+    }
+    .project {
+      flex: 0 0 auto;
+      min-width: 240px;
+      scroll-snap-align: start;
+    }
+    /* Style scrollbar (opsional) */
+    .projects::-webkit-scrollbar {
+      height: 6px;
+    }
+    .projects::-webkit-scrollbar-thumb {
+      background: rgba(0, 123, 255, 0.6);
+      border-radius: 3px;
+    }
+    .projects::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
   }
 </style>
 </head>
 <body>
-
 <header>
   <div class="container">
     <h1>Rinaldi Agusta</h1>
